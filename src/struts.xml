@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+"http://struts.apache.org/dtds/struts-2.3.dtd"><struts>
+ <package name="shop" extends="struts-default">
+   
+       <interceptors>
+		<interceptor name="isSess" class="tools.isSess"></interceptor>
+		</interceptors>
+		<!-- 
+        <global-results>
+            <result name="error">/others/goindex.jsp</result>
+        </global-results>
+        <global-exception-mappings>
+            <exception-mapping exception="java.lang.Exception" result="error"/>
+        </global-exception-mappings>
+		 -->
+		
+        <action name="login" class="Login.login">
+            <result name="index">/index.jsp</result>
+            <result name="login">/manageSystem.jsp</result>
+        </action>
+        
+        
+        <action name="pic" class="tools.pic">
+            <result name="success" type="stream">
+            	<param name="contentType">image/jpeg</param>
+                    <param name="inputName">inputStream</param>
+            </result>
+        </action>
+        
+         <action name="shopManage" class="shopManage.shopManage">
+            <result name="selShop">/shopManage/selInfo.jsp</result>
+            <result name="selshop">/shopManage/selShop.jsp</result>
+            <result name="updShop">/shopManage/updShop.jsp</result>
+            <result name="infoManage">/shopManage/infoManage.jsp</result>
+            <result name="updSave">/shopManage/shop.jsp</result>
+            <result name="infoSave">/shopManage/infoManage.jsp</result>
+            <result name="searchShop">/shopManage/shop.jsp</result>
+            <result name="shopown">/shopManage/shopowner.jsp</result>
+            <result name="addShop">/shopManage/addShop.jsp</result>
+            <result name="delShop">/shopManage/shop.jsp</result>
+            <result name="ownmanage">/shopManage/ownerManage.jsp</result>
+            <result name="updGufen">/shopManage/ownerManage.jsp</result>
+            <result name="delGufen">/shopManage/ownerManage.jsp</result>
+            <result name="addGufen">/shopManage/ownerManage.jsp</result>
+        </action>
+        
+        
+        <action name="perManage" class="perManage.perManage">
+            <result name="selShopList">/perManage/Selperson.jsp</result>
+            <result name="searchPerson">/perManage/Selperson.jsp</result>
+            <result name="PrivilegeList">/perManage/privilege.jsp</result>
+            <result name="selPer">/perManage/updPer.jsp</result>
+            <result name="addPer">/perManage/addPer.jsp</result>
+        </action>
+        <action name="along" class="perManage.along">
+            <result name="toAlong">/perManage/along/Selalong.jsp</result>
+            <result name="selAlong">/perManage/along/Selalong.jsp</result>
+       
+        </action>
+        
+        <action name="Position" class="perManage.position">
+            <result name="toPosi">/perManage/position/Selposi.jsp</result>
+            <result name="selPosi">/perManage/position/Selposi.jsp</result>
+       
+        </action>
+        <action name="goods" class="goods.goodsManage">
+            <result name="togoods">/goods/Selposi.jsp</result>
+            <result name="toWebCam">/goods/webcam.jsp</result>
+            <result name="toFile">/goods/file.jsp</result>
+            <result name="toSub">/goods/search.jsp</result>
+            <result name="toUpd">/goods/upd.jsp</result>
+            <result name="tianjia">/goods/add.jsp</result>
+            <result name="toSale">/goods/sale.jsp</result>
+        </action>
+        <action name="house" class="house.houseManage">
+            <result name="togoods">/goodshouse/Selposi.jsp</result>
+            <result name="toWebCam">/goodshouse/webcam.jsp</result>
+            <result name="toFile">/goodshouse/file.jsp</result>
+            <result name="toSub">/goodshouse/search.jsp</result>
+            <result name="toUpd">/goodshouse/upd.jsp</result>
+            <result name="tianjia">/goodshouse/add.jsp</result>
+            <result name="tologs">/goodshouse/houselogs.jsp</result>
+            <result name="sellogs">/goodshouse/sellogs.jsp</result>
+        </action>
+        
+        <action name="books" class="books.booksManage">
+            <result name="tologs">/books/salelogs.jsp</result>
+            <result name="sellogs">/books/sellogs.jsp</result>
+            <result name="togroupby">/books/groupby.jsp</result>
+            <result name="groupby">/books/groupby.jsp</result>
+            <result name="groupby_all">/books/groupby_all.jsp</result>
+        </action>
+        
+        <!-- 
+        <action name="infomanage" class="setSystem.Infomanage">
+         <interceptor-ref name="defaultStack"></interceptor-ref>
+	     <interceptor-ref name="isSess"></interceptor-ref>
+	      <result name="go">setSystem/infomanage.jsp</result>
+         <result name="success">setSystem/art/infoart.jsp</result>
+         </action>
+          -->
+      
+    </package>
+
+</struts>    
